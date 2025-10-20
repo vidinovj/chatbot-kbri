@@ -1,38 +1,124 @@
 Country,City,Type,Latitude,Longitude
 Afghanistan,Kabul,Embassy,34.52813,69.17233
-Australia,Adelaide,Honorary Consulate,-34.92866,138.59863
+Algeria,Algiers,Embassy,36.73225,3.08746
+Argentina,Buenos Aires,Embassy,-34.61315,-58.37723
 Australia,Canberra,Embassy,-35.28346,149.12807
-Australia,Darwin,Consulate,-12.46113,130.84185
 Australia,Melbourne,Consulate General,-37.814,144.96332
-Australia,Perth,Consulate,-31.95224,115.8614
+Australia,Perth,Consulate General,-31.95224,115.8614
 Australia,Sydney,Consulate General,-33.86785,151.20732
+Austria,Vienna,Embassy,48.20849,16.37208
+Azerbaijan,Baku,Embassy,40.37767,49.89201
+Bahrain,Manama,Embassy,26.22787,50.58565
 Bangladesh,Dhaka,Embassy,23.7104,90.40744
-Brazil,Belo Horizonte,Honorary Consulate General,-19.92083,-43.93778
+Belgium,Brussels,Embassy,50.85045,4.34878
+Bosnia and Herzegovina,Sarajevo,Embassy,43.84864,18.35644
+Brazil,Brasilia,Embassy,-15.77972,-47.92972
 Brunei,Bandar Seri Begawan,Embassy,4.89035,114.94006
+Bulgaria,Sofia,Embassy,42.69751,23.32415
+Cambodia,Phnom Penh,Embassy,11.56245,104.91601
 Canada,Ottawa,Embassy,45.41117,-75.69812
 Canada,Toronto,Consulate General,43.70643,-79.39864
 Canada,Vancouver,Consulate General,49.24966,-123.11934
+Chile,Santiago,Embassy,-33.45694,-70.64827
 China,Beijing,Embassy,39.9075,116.39723
 China,Guangzhou,Consulate General,23.11667,113.25
 China,Hong Kong,Consulate General,22.27832,114.17469
-Indonesia,Jakarta,Embassy,-6.21462,106.84513
+China,Shanghai,Consulate General,31.22222,121.45806
+Colombia,Bogota,Embassy,4.60971,-74.08175
+Croatia,Zagreb,Embassy,45.81444,15.97798
+Cuba,Havana,Embassy,23.13302,-82.38304
+Czech Republic,Prague,Embassy,50.08804,14.42076
+Denmark,Copenhagen,Embassy,55.67594,12.56553
+Ecuador,Quito,Embassy,-0.22985,-78.52495
+Egypt,Cairo,Embassy,30.06263,31.24967
+Ethiopia,Addis Ababa,Embassy,9.02497,38.74689
+Fiji,Suva,Embassy,-18.13683,178.42531
+Finland,Helsinki,Embassy,60.16952,24.93545
+France,Paris,Embassy,48.85341,2.3488
+France,Marseille,Consulate General,43.29695,5.38107
+Germany,Berlin,Embassy,52.52437,13.41053
+Germany,Frankfurt,Consulate General,50.11552,8.68417
+Germany,Hamburg,Consulate General,53.55073,9.99302
+Greece,Athens,Embassy,37.98376,23.72784
+Holy See,Vatican City,Embassy,41.90268,12.45414
+Hungary,Budapest,Embassy,47.49835,19.04045
+India,New Delhi,Embassy,28.62137,77.2148
+India,Mumbai,Consulate General,19.07283,72.88261
+Iran,Tehran,Embassy,35.69439,51.42151
 Iraq,Baghdad,Embassy,33.34058,44.40088
-Japan,Fukuoka,Honorary Consulate,33.6,130.41667
-Japan,Osaka,Consulate General,34.69379,135.50107
-Japan,Sapporo,Honorary Consulate,43.06667,141.35
+Ireland,Dublin,Embassy,53.33306,-6.24889
+Italy,Rome,Embassy,41.89193,12.51133
 Japan,Tokyo,Embassy,35.6895,139.69171
+Japan,Osaka,Consulate General,34.69379,135.50107
 Jordan,Amman,Embassy,31.95522,35.94503
 Kazakhstan,Astana,Embassy,51.1801,71.44598
+Kenya,Nairobi,Embassy,-1.28333,36.81667
+Kuwait,Kuwait City,Embassy,29.367,47.97429
+Laos,Vientiane,Embassy,17.96667,102.6
 Lebanon,Beirut,Embassy,33.89332,35.50157
-Malaysia,Johor Bahru,Consulate General,1.4655,103.7578
+Libya,Tripoli,Embassy,32.88743,13.18733
 Malaysia,Kuala Lumpur,Embassy,3.1412,101.68653
+Malaysia,Johor Bahru,Consulate General,1.4655,103.7578
+Malaysia,Kota Kinabalu,Consulate General,5.9749,116.0724
 Malaysia,Kuching,Consulate General,1.55,110.33333
+Malaysia,Penang,Consulate General,5.41123,100.33543
+Mexico,Mexico City,Embassy,19.42847,-99.12766
+Morocco,Rabat,Embassy,34.01325,-6.83255
+Mozambique,Maputo,Embassy,-25.96553,32.58322
+Myanmar,Yangon,Embassy,16.80528,96.15611
+Namibia,Windhoek,Embassy,-22.55941,17.08323
+Netherlands,The Hague,Embassy,52.07667,4.29861
+New Zealand,Wellington,Embassy,-41.28664,174.77557
+Nigeria,Abuja,Embassy,9.05785,7.49508
+North Korea,Pyongyang,Embassy,39.03385,125.75432
+Norway,Oslo,Embassy,59.91273,10.74609
+Oman,Muscat,Embassy,23.58413,58.40778
 Pakistan,Islamabad,Embassy,33.72148,73.04329
 Pakistan,Karachi,Consulate General,24.8608,67.0104
+Panama,Panama City,Embassy,8.9936,-79.51973
+Papua New Guinea,Port Moresby,Embassy,-9.47723,147.15089
+Peru,Lima,Embassy,-12.04318,-77.02824
+Philippines,Manila,Embassy,14.58333,120.96667
+Philippines,Davao City,Consulate General,7.07306,125.61278
+Poland,Warsaw,Embassy,52.22977,21.01178
+Portugal,Lisbon,Embassy,38.72509,-9.1498
+Qatar,Doha,Embassy,25.28545,51.53096
+Romania,Bucharest,Embassy,44.43225,26.10626
+Russia,Moscow,Embassy,55.75222,37.61556
+Saudi Arabia,Riyadh,Embassy,24.68773,46.72185
+Saudi Arabia,Jeddah,Consulate General,21.49012,39.18624
+Senegal,Dakar,Embassy,14.6937,-17.44406
+Serbia,Belgrade,Embassy,44.80401,20.46513
+Singapore,Singapore,Embassy,1.28967,103.85007
+Slovakia,Bratislava,Embassy,48.14816,17.10674
+South Africa,Pretoria,Embassy,-25.74486,28.18783
+South Africa,Cape Town,Consulate General,-33.92584,18.42322
+South Korea,Seoul,Embassy,37.566,126.9784
+Spain,Madrid,Embassy,40.4165,-3.70256
 Sri Lanka,Colombo,Embassy,6.93548,79.84868
+Sudan,Khartoum,Embassy,15.55177,32.53241
+Suriname,Paramaribo,Embassy,5.86638,-55.16682
+Sweden,Stockholm,Embassy,59.32938,18.06871
+Switzerland,Bern,Embassy,46.94809,7.44744
 Syria,Damascus,Embassy,33.5102,36.29128
+Tanzania,Dar es Salaam,Embassy,-6.82349,39.26951
 Thailand,Bangkok,Embassy,13.75398,100.50144
-Thailand,Songkhla,Consulate,7.19882,100.5951
 Timor-Leste,Dili,Embassy,-8.55861,125.57361
+Tunisia,Tunis,Embassy,36.81897,10.16579
+Turkey,Ankara,Embassy,39.91987,32.85427
+Turkey,Istanbul,Consulate General,41.01384,28.94966
+Turkmenistan,Ashgabat,Embassy,37.95,58.38333
+UAE,Abu Dhabi,Embassy,24.45118,54.39696
 UAE,Dubai,Consulate General,25.07725,55.30927
-Germany,Berlin,Embassy,52.52437,13.41053
+UK,London,Embassy,51.50853,-0.12574
+USA,Washington D.C.,Embassy,38.89511,-77.03637
+USA,Chicago,Consulate General,41.85003,-87.65005
+USA,Houston,Consulate General,29.76328,-95.36327
+USA,Los Angeles,Consulate General,34.05223,-118.24368
+USA,New York,Consulate General,40.71427,-74.00597
+USA,San Francisco,Consulate General,37.77493,-122.41942
+Uzbekistan,Tashkent,Embassy,41.26465,69.21627
+Venezuela,Caracas,Embassy,10.48801,-66.87919
+Vietnam,Hanoi,Embassy,21.0245,105.84117
+Yemen,Sana'a,Embassy,15.35452,44.20646
+Zimbabwe,Harare,Embassy,-17.82772,31.05337

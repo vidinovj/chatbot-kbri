@@ -1,46 +1,124 @@
 Country,City,Type
 Afghanistan,Kabul,Embassy
-Australia,Adelaide,Honorary Consulate
+Algeria,Algiers,Embassy
+Argentina,Buenos Aires,Embassy
 Australia,Canberra,Embassy
-Australia,Darwin,Consulate
 Australia,Melbourne,Consulate General
-Australia,Perth,Consulate
+Australia,Perth,Consulate General
 Australia,Sydney,Consulate General
-Bangladesh,Chittagong,Honorary Consulate
+Austria,Vienna,Embassy
+Azerbaijan,Baku,Embassy
+Bahrain,Manama,Embassy
 Bangladesh,Dhaka,Embassy
-Brazil,Belo Horizonte,Honorary Consulate General
+Belgium,Brussels,Embassy
+Bosnia and Herzegovina,Sarajevo,Embassy
 Brazil,Brasilia,Embassy
-Brazil,Recife-Pernambuco,Honorary Consulate General
-Brazil,Rio de Janeiro,Honorary Consulate General
-Brazil,Sao Paulo,Honorary Consulate General
 Brunei,Bandar Seri Begawan,Embassy
+Bulgaria,Sofia,Embassy
+Cambodia,Phnom Penh,Embassy
 Canada,Ottawa,Embassy
 Canada,Toronto,Consulate General
 Canada,Vancouver,Consulate General
+Chile,Santiago,Embassy
 China,Beijing,Embassy
 China,Guangzhou,Consulate General
 China,Hong Kong,Consulate General
-Indonesia,Jakarta,Embassy
+China,Shanghai,Consulate General
+Colombia,Bogota,Embassy
+Croatia,Zagreb,Embassy
+Cuba,Havana,Embassy
+Czech Republic,Prague,Embassy
+Denmark,Copenhagen,Embassy
+Ecuador,Quito,Embassy
+Egypt,Cairo,Embassy
+Ethiopia,Addis Ababa,Embassy
+Fiji,Suva,Embassy
+Finland,Helsinki,Embassy
+France,Paris,Embassy
+France,Marseille,Consulate General
+Germany,Berlin,Embassy
+Germany,Frankfurt,Consulate General
+Germany,Hamburg,Consulate General
+Greece,Athens,Embassy
+Holy See,Vatican City,Embassy
+Hungary,Budapest,Embassy
+India,New Delhi,Embassy
+India,Mumbai,Consulate General
+Iran,Tehran,Embassy
 Iraq,Baghdad,Embassy
-Japan,Fukuoka,Honorary Consulate
-Japan,Osaka,Consulate General
-Japan,Sapporo,Honorary Consulate
+Ireland,Dublin,Embassy
+Italy,Rome,Embassy
 Japan,Tokyo,Embassy
+Japan,Osaka,Consulate General
 Jordan,Amman,Embassy
 Kazakhstan,Astana,Embassy
+Kenya,Nairobi,Embassy
+Kuwait,Kuwait City,Embassy
+Laos,Vientiane,Embassy
 Lebanon,Beirut,Embassy
-Malaysia,Johor Bahru,Consulate General
+Libya,Tripoli,Embassy
 Malaysia,Kuala Lumpur,Embassy
+Malaysia,Johor Bahru,Consulate General
+Malaysia,Kota Kinabalu,Consulate General
 Malaysia,Kuching,Consulate General
 Malaysia,Penang,Consulate General
-Malaysia,Sabah,Consulate General
+Mexico,Mexico City,Embassy
+Morocco,Rabat,Embassy
+Mozambique,Maputo,Embassy
+Myanmar,Yangon,Embassy
+Namibia,Windhoek,Embassy
+Netherlands,The Hague,Embassy
+New Zealand,Wellington,Embassy
+Nigeria,Abuja,Embassy
+North Korea,Pyongyang,Embassy
+Norway,Oslo,Embassy
+Oman,Muscat,Embassy
 Pakistan,Islamabad,Embassy
 Pakistan,Karachi,Consulate General
+Panama,Panama City,Embassy
+Papua New Guinea,Port Moresby,Embassy
+Peru,Lima,Embassy
+Philippines,Manila,Embassy
+Philippines,Davao City,Consulate General
+Poland,Warsaw,Embassy
+Portugal,Lisbon,Embassy
+Qatar,Doha,Embassy
+Romania,Bucharest,Embassy
+Russia,Moscow,Embassy
+Saudi Arabia,Riyadh,Embassy
+Saudi Arabia,Jeddah,Consulate General
+Senegal,Dakar,Embassy
+Serbia,Belgrade,Embassy
+Singapore,Singapore,Embassy
+Slovakia,Bratislava,Embassy
+South Africa,Pretoria,Embassy
+South Africa,Cape Town,Consulate General
+South Korea,Seoul,Embassy
+Spain,Madrid,Embassy
 Sri Lanka,Colombo,Embassy
+Sudan,Khartoum,Embassy
+Suriname,Paramaribo,Embassy
+Sweden,Stockholm,Embassy
+Switzerland,Bern,Embassy
 Syria,Damascus,Embassy
+Tanzania,Dar es Salaam,Embassy
 Thailand,Bangkok,Embassy
-Thailand,Songkhla,Consulate
 Timor-Leste,Dili,Embassy
-Timor-Leste,Pante Macassar,Embassy Extension Office
+Tunisia,Tunis,Embassy
+Turkey,Ankara,Embassy
+Turkey,Istanbul,Consulate General
+Turkmenistan,Ashgabat,Embassy
+UAE,Abu Dhabi,Embassy
 UAE,Dubai,Consulate General
-Germany,Berlin,Embassy
+UK,London,Embassy
+USA,Washington D.C.,Embassy
+USA,Chicago,Consulate General
+USA,Houston,Consulate General
+USA,Los Angeles,Consulate General
+USA,New York,Consulate General
+USA,San Francisco,Consulate General
+Uzbekistan,Tashkent,Embassy
+Venezuela,Caracas,Embassy
+Vietnam,Hanoi,Embassy
+Yemen,Sana'a,Embassy
+Zimbabwe,Harare,Embassy
