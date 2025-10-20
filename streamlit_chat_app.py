@@ -1,130 +1,128 @@
 # Import the necessary libraries
-import streamlit as st  # For creating the web app interface
-from google import genai  # For interacting with the Google Gemini API
+import streamlit as st
+import pandas as pd
+from math import radians, sin, cos, sqrt, atan2
+from google import genai
 
 # --- 1. Page Configuration and Title ---
 
-# Set the title and a caption for the web page
-st.title("💬 Gemini Chatbot")
-st.caption("A simple and friendly chat using Google's Gemini Flash model")
+st.title("Kantor Perwakilan RI Terdekat")
+st.caption("Cari Kedutaan Besar atau Konsulat Jenderal RI terdekat dari lokasimu")
 
 # --- 2. Sidebar for Settings ---
 
-# Create a sidebar section for app settings using 'with st.sidebar:'
 with st.sidebar:
-    # Add a subheader to organize the settings
     st.subheader("Settings")
-    
-    # Create a text input field for the Google AI API Key.
-    # 'type="password"' hides the key as the user types it.
     google_api_key = st.text_input("Google AI API Key", type="password")
-    
-    # Create a button to reset the conversation.
-    # 'help' provides a tooltip that appears when hovering over the button.
-    reset_button = st.button("Reset Conversation", help="Clear all messages and start fresh")
 
 # --- 3. API Key and Client Initialization ---
 
-# Check if the user has provided an API key.
-# If not, display an informational message and stop the app from running further.
 if not google_api_key:
     st.info("Please add your Google AI API key in the sidebar to start chatting.", icon="🗝️")
     st.stop()
 
-# This block of code handles the creation of the Gemini API client.
-# It's designed to be efficient: it only creates a new client if one doesn't exist
-# or if the user has changed the API key in the sidebar.
+try:
+    client = genai.Client(api_key=google_api_key)
+except Exception as e:
+    st.error(f"Invalid API Key: {e}")
+    st.stop()
 
-# We use `st.session_state` which is Streamlit's way of "remembering" variables
-# between user interactions (like sending a message or clicking a button).
+# --- 4. Data Loading ---
 
-# Condition 1: "genai_client" not in st.session_state
-# Checks if we have *never* created the client before.
-#
-# Condition 2: getattr(st.session_state, "_last_key", None) != google_api_key
-# This is a safe way to check if the current API key is different from the last one we used.
-# `getattr(object, 'attribute_name', default_value)` tries to get an attribute from an object.
-# If the attribute doesn't exist, it returns the default value (in this case, `None`).
-# So, it checks: "Is the key stored in memory different from the one in the input box?"
-if ("genai_client" not in st.session_state) or (getattr(st.session_state, "_last_key", None) != google_api_key):
+@st.cache_data
+def load_data():
+    kbri_kjri_df = pd.read_csv("kbri_kjri_locations_with_coordinates.csv")
+    world_cities_df = pd.read_csv("world_cities.csv")
+    return kbri_kjri_df, world_cities_df
+
+kbri_kjri_df, world_cities_df = load_data()
+
+# --- 5. Core Logic ---
+
+def haversine(lat1, lon1, lat2, lon2):
+    R = 6371  # Radius of Earth in kilometers
+
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    distance = R * c
+    return distance
+
+def find_nearest_kbri_kjri(user_prompt):
+    # Use Gemini to extract the city from the user's prompt
+    extraction_prompt = f"From the following text, extract only the city name and nothing else: \"{user_prompt}\""
     try:
-        # If the conditions are met, create a new client.
-        st.session_state.genai_client = genai.Client(api_key=google_api_key)
-        # Store the new key in session state to compare against later.
-        st.session_state._last_key = google_api_key
-        # Since the key changed, we must clear the old chat and message history.
-        # .pop() safely removes an item from session_state.
-        st.session_state.pop("chat", None)
-        st.session_state.pop("messages", None)
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=extraction_prompt
+        )
+        user_city = response.text.strip()
     except Exception as e:
-        # If the key is invalid, show an error and stop.
-        st.error(f"Invalid API Key: {e}")
-        st.stop()
+        return f"An error occurred while extracting the city: {e}", None, None
+
+    try:
+        user_city_data = world_cities_df[world_cities_df["name"].str.lower() == user_city.lower()].iloc[0]
+        user_lat, user_lon = user_city_data["lat"], user_city_data["lng"]
+    except IndexError:
+        return f"Maaf, saya tidak dapat menemukan kota '{user_city}' dalam database saya.", None, None
+
+    distances = []
+    for index, row in kbri_kjri_df.iterrows():
+        dist = haversine(user_lat, user_lon, row["Latitude"], row["Longitude"])
+        distances.append((row["City"], row["Country"], row["Type"], dist))
+
+    distances.sort(key=lambda x: x[3])
+    nearest = distances[0]
+    return None, nearest, (user_lat, user_lon)
 
 
-# --- 4. Chat History Management ---
+# --- 6. Chat History Management ---
 
-# Initialize the chat session if it doesn't already exist in memory.
-if "chat" not in st.session_state:
-    # Create a new chat instance using the 'gemini-2.5-flash' model.
-    st.session_state.chat = st.session_state.genai_client.chats.create(model="gemini-2.5-flash")
-
-# Initialize the message history (as a list) if it doesn't exist.
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Handle the reset button click.
-if reset_button:
-    # If the reset button is clicked, clear the chat object and message history from memory.
-    st.session_state.pop("chat", None)
-    st.session_state.pop("messages", None)
-    # st.rerun() tells Streamlit to refresh the page from the top.
-    st.rerun()
+# --- 7. Display Past Messages ---
 
-# --- 5. Display Past Messages ---
-
-# Loop through every message currently stored in the session state.
 for msg in st.session_state.messages:
-    # For each message, create a chat message bubble with the appropriate role ("user" or "assistant").
     with st.chat_message(msg["role"]):
-        # Display the content of the message using Markdown for nice formatting.
         st.markdown(msg["content"])
 
-# --- 6. Handle User Input and API Communication ---
+# --- 8. Handle User Input ---
 
-# Create a chat input box at the bottom of the page.
-# The user's typed message will be stored in the 'prompt' variable.
-prompt = st.chat_input("Type your message here...")
+prompt = st.chat_input("Contoh: Saya di Paris, di mana KBRI terdekat?")
 
-# Check if the user has entered a message.
 if prompt:
-    # 1. Add the user's message to our message history list.
     st.session_state.messages.append({"role": "user", "content": prompt})
-    # 2. Display the user's message on the screen immediately for a responsive feel.
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # 3. Get the assistant's response.
-    # Use a 'try...except' block to gracefully handle potential errors (e.g., network issues, API errors).
-    try:
-        # Send the user's prompt to the Gemini API.
-        response = st.session_state.chat.send_message(prompt)
+    error_message, nearest, user_coords = find_nearest_kbri_kjri(prompt)
+
+    if error_message:
+        answer = error_message
+    elif nearest:
+        city, country, type, dist = nearest
         
-        # Safely get the text from the response object.
-        # `hasattr(object, 'attribute_name')` checks if an object has a specific property.
-        # This prevents an error if the API response object doesn't have a '.text' attribute.
-        if hasattr(response, "text"):
+        # Use Gemini to generate a richer response
+        generation_prompt = f"You are a helpful assistant for Indonesians abroad. Based on the following information, generate a friendly and informative response in Indonesian. The user is in {prompt}. The nearest Indonesian representative office is a {type} in {city}, {country}, which is approximately {dist:.2f} km away. Provide the information clearly and maybe add a helpful tip about the location."
+        
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=generation_prompt
+            )
             answer = response.text
-        else:
-            # If there's no '.text', convert the whole response to a string as a fallback.
-            answer = str(response)
+        except Exception as e:
+            answer = f"An error occurred while generating the response: {e}"
+    else:
+        answer = "Maaf, saya tidak dapat menemukan informasi yang Anda cari."
 
-    except Exception as e:
-        # If any error occurs, create an error message to display to the user.
-        answer = f"An error occurred: {e}"
 
-    # 4. Display the assistant's response.
     with st.chat_message("assistant"):
         st.markdown(answer)
-    # 5. Add the assistant's response to the message history list.
     st.session_state.messages.append({"role": "assistant", "content": answer})
