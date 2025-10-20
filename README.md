@@ -1,4 +1,6 @@
-## Getting Started
+## KBRI/KJRI Finder Chatbot
+
+This is an AI-powered chatbot to help Indonesians abroad find the nearest Indonesian embassy (KBRI) or consulate (KJRI).
 
 ### Prerequisites
 
@@ -6,20 +8,17 @@ Ensure you have Python installed. It is recommended to use `miniconda` or `conda
 
 ### Installation
 
-1.  **Install Miniconda (if not already installed)**
+1.  **Create a Virtual Environment**
 
-    Download and install Miniconda from the official website: <mcurl name="Miniconda Installer" url="https://docs.conda.io/en/latest/miniconda.html"></mcurl>
+    It is recommended to create a virtual environment to run this project. You can use `conda` or `venv`.
 
-2.  **Create a Conda Environment**
-
-    Open your terminal or Anaconda Prompt and create a new environment:
-
+    Using `venv` (as was done in this project):
     ```bash
-    conda create -n chatbot-env python=3.9
-    conda activate chatbot-env
+    python3 -m venv chatbot-env
+    source chatbot-env/bin/activate
     ```
 
-3.  **Install Requirements**
+2.  **Install Requirements**
 
     Navigate to the project directory and install the necessary packages:
 
@@ -27,10 +26,11 @@ Ensure you have Python installed. It is recommended to use `miniconda` or `conda
     pip install -r requirements.txt
     ```
 
-4.  **Run the Streamlit Application**
+3.  **Run the Streamlit Application**
 
     ```bash
-    streamlit run streamlit_app.py
+    streamlit run streamlit_chat_app.py
+    ```
 
     The application will open in your web browser.
 
@@ -41,7 +41,7 @@ Ensure you have Python installed. It is recommended to use `miniconda` or `conda
     Navigate to the project directory and build the Docker image:
 
     ```bash
-    docker build -t chatbot-streamlit-demo .
+    docker build -t chatbot-kbri-demo .
     ```
 
 2.  **Run the Docker Container**
@@ -49,15 +49,15 @@ Ensure you have Python installed. It is recommended to use `miniconda` or `conda
     Run the Docker container, mapping port 8501:
 
     ```bash
-    docker run -p 8501:8501 chatbot-streamlit-demo
+    docker run -p 8501:8501 chatbot-kbri-demo
     ```
 
     The application will be accessible in your web browser at `http://localhost:8501`.
 
 ## Code Structure
 
-- streamlit_app.py: The main Streamlit application file, containing the chatbot UI and logic.
-- database_tools.py: Contains functions for interacting with the sales_data.db database.
-- requirements.txt: Lists all Python dependencies required for the project.
-- streamlit_react_app.py: (Optional) Another Streamlit application, possibly demonstrating React integration.
-- streamlit_react_tools_app.py: (Optional) Another Streamlit application, possibly demonstrating React tools integration.
+- `streamlit_chat_app.py`: The main Streamlit application file, containing the chatbot UI and logic for finding the nearest KBRI/KJRI.
+- `kbri_kjri_locations.csv`: A list of KBRI/KJRI locations.
+- `world_cities.csv`: A dataset of world cities with their coordinates.
+- `kbri_kjri_locations_with_coordinates.csv`: A combined dataset of KBRI/KJRI locations with their coordinates.
+- `requirements.txt`: Lists all Python dependencies required for the project.
