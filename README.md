@@ -6,6 +6,13 @@ This is an AI-powered chatbot to help Indonesians abroad find the nearest Indone
 
 ![Chatbot Screenshot](ScreenShotKBRIchatbot.png)
 
+## Features Highlight
+- 🌍 Find nearest KBRI/KJRI from any location
+- 📍 Geolocation calculation using Haversine formula
+- 🤖 Natural language understanding powered by Gemini AI
+- 💬 Friendly responses in Indonesian
+- 📊 Database of 100+ Indonesian representative offices worldwide
+
 ### Prerequisites
 
 Ensure you have Python installed. It is recommended to use `miniconda` or `conda` for environment management.
