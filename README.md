@@ -2,6 +2,10 @@
 
 This is an AI-powered chatbot to help Indonesians abroad find the nearest Indonesian embassy (KBRI) or consulate (KJRI).
 
+### Screenshot
+
+![Chatbot Screenshot](ScreenShotKBRIchatbot.png)
+
 ### Prerequisites
 
 Ensure you have Python installed. It is recommended to use `miniconda` or `conda` for environment management.
